@@ -15,13 +15,12 @@
   font-family:'Poppins',sans-serif;
 }
 
+/* SCROLL ENABLED */
 body{
   background: linear-gradient(135deg,#ff9a9e,#fad0c4);
-  overflow:hidden;
+  overflow-y:auto;
   display:flex;
   justify-content:center;
-  align-items:center;
-  height:100vh;
 }
 
 /* Floating hearts */
@@ -36,7 +35,7 @@ body{
   100%{transform:translateY(-10vh) scale(1.2);opacity:0;}
 }
 
-/* Card */
+/* Container becomes long */
 .container{
   background:white;
   width:90%;
@@ -46,6 +45,7 @@ body{
   text-align:center;
   box-shadow:0 10px 30px rgba(0,0,0,0.2);
   animation:fadeIn 1.5s ease;
+  margin:40px 0;
 }
 
 @keyframes fadeIn{
@@ -92,15 +92,28 @@ body{
   background:#ff1e4d;
 }
 
-/* Letter */
+/* Letter now scrollable */
 .letter{
   display:none;
-  margin-top:15px;
+  margin-top:20px;
   font-size:14px;
   color:#444;
   text-align:left;
-  line-height:1.6;
+  line-height:1.8;
   white-space:pre-line;
+
+  max-height:400px;
+  overflow-y:auto;
+  padding-right:5px;
+}
+
+/* Scrollbar style */
+.letter::-webkit-scrollbar{
+  width:5px;
+}
+.letter::-webkit-scrollbar-thumb{
+  background:#ff4d6d;
+  border-radius:10px;
 }
 
 /* Typing effect */
@@ -131,7 +144,6 @@ for(let i=0;i<20;i++){
 
 <div class="container">
   
-  <!-- Your Image -->
   <img src="b1.jpeg" class="profile">
 
   <div class="name">Bhagya (Pgl) 💖</div>
@@ -142,7 +154,6 @@ for(let i=0;i<20;i++){
 
 </div>
 
-<!-- Music -->
 <audio id="music" src="https://www.bensound.com/bensound-music/bensound-romantic.mp3"></audio>
 
 <script>
